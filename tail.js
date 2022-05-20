@@ -1,5 +1,5 @@
 // Colourful replacement for the assert() method for the tail of an array
-const assertEqual = function (actual, expected) {
+const assertEqual = function(actual, expected) {
   if (actual[0] !== expected[0]) {
     return console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
   }
@@ -8,7 +8,7 @@ const assertEqual = function (actual, expected) {
 
 // Function that will return every value in a given array minus the first index
 
-const tail = function (array) {
+const tail = function(array) {
   if (array === undefined) {
     return;
   }
