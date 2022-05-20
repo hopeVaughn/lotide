@@ -26,9 +26,6 @@ const without = function(source, itemsToRemove) {
       // only returning elements not (!falsey) included in the itemsToRemove parameter array
       !itemsToRemove.includes(e)
   );
-  // testing the source parameter array to check for mutibility and showing itemsToRemove for reference
-  // console.log(source);
-  // console.log(itemsToRemove);
   // returning the new result array
   return result;
 };
