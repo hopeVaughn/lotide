@@ -1,13 +1,9 @@
-const assertEqual = function(actual, expected) {
-  if (!actual && !expected) {
-    return console.log(
-      `🛑🛑🛑 Assertion Failed: [array1] === [array2] = ${expected}`
-    );
+const assertArrayEquals = function(array1, array2) {
+  if (!eqArrays(array1, array2)) {
+    return console.log(`🛑🛑🛑 Assertion Failed: ${array1} !== ${array2}`);
   }
 
-  return console.log(
-    `🟢🟢🟢 Asstertion Passed: [array1] === [array2] = ${expected}`
-  );
+  return console.log(`🟢🟢🟢 Asstertion Passed: ${array1} ===  ${array2}`);
 };
 
 const eqArrays = function(array1, array2) {
@@ -23,14 +19,8 @@ const eqArrays = function(array1, array2) {
   return true;
 };
 
-assertEqual(eqArrays([4, 3, 1, 2, 5], [4, 3, 1, 2, 5]), true);
-assertEqual(eqArrays([4, 3, 1, 2, 5], [4, 3, 1, 2, 5]), true);
-assertEqual(
-  eqArrays(['3', '4', '2', '1', '5'], ['3', '4', '2', '1', '5']),
-  true
-);
-assertEqual(
-  eqArrays(['a', 'b', 'd', 'c', 'e'], ['b', 'd', 'A', 'e', 'c']),
-  false
-);
-assertEqual(eqArrays(['a', 'b', 'd', 'c', 'e'], ['a', 'd', 'a', 'e']), false);
+assertArrayEquals([4, 3, 1, 2, 5], [4, 3, 1, 2, 5]);
+assertArrayEquals([4, 3, 1, 2, 5], [4, 3, 1, 2, 5]);
+assertArrayEquals(['3', '4', '2', '1', '5'], ['3', '4', '2', '1', '5']);
+assertArrayEquals(['a', 'b', 'd', 'c', 'e'], ['b', 'd', 'A', 'e', 'c']);
+assertArrayEquals(['a', 'b', 'd', 'c', 'e'], ['a', 'd', 'a', 'e']);
