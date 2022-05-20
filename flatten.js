@@ -1,4 +1,4 @@
-const assertArraysEqual = function(array1, array2) {
+const assertArraysEqual = function (array1, array2) {
   if (!eqArrays(array1, array2)) {
     return console.log(`🛑🛑🛑 Assertion Failed: ${array1} !== ${array2}`);
   }
@@ -6,7 +6,7 @@ const assertArraysEqual = function(array1, array2) {
   return console.log(`🟢🟢🟢 Asstertion Passed: ${array1} ===  ${array2}`);
 };
 
-const eqArrays = function(array1, array2) {
+const eqArrays = function (array1, array2) {
   if (array1.length !== array2.length) {
     return false;
   }
@@ -18,16 +18,6 @@ const eqArrays = function(array1, array2) {
   }
   return true;
 };
-
-// const flatten = function (array) {
-//   const merge = [].concat(...array);
-//   console.log(merge);
-// };
-
-// const flatten = function (array) {
-//   const merge = array.flat(1);
-//   console.log(merge);
-// };
 
 const flatten = (array) => {
   return array.reduce((flat, toBeFlattened) => {
