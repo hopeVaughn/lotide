@@ -23,10 +23,10 @@ const eqArrays = function(array1, array2) {
   return true;
 };
 
-assertEqual(eqArrays([4, 3, 1, 2, 5], [3, 1, 2, 5, 4]), true);
-assertEqual(eqArrays([1, 3, 4, 2], [4, 2, 1, 3]), true);
+assertEqual(eqArrays([4, 3, 1, 2, 5], [4, 3, 1, 2, 5]), true);
+assertEqual(eqArrays([4, 3, 1, 2, 5], [4, 3, 1, 2, 5]), true);
 assertEqual(
-  eqArrays(['3', '4', '2', '1', '5'], ['2', '3', '5', '4', '1']),
+  eqArrays(['3', '4', '2', '1', '5'], ['3', '4', '2', '1', '5']),
   true
 );
 assertEqual(
