@@ -36,7 +36,7 @@ const value1 = countLetters('hey my guy, whats shakin bacon?');
 const value2 = countLetters('hhh jjj kkk ll m n');
 const value3 = countLetters('1,2,3,4,5,mm,nn,p');
 const value4 = countLetters('AA,  Ggt &*, AAA');
-
+// console.log(value1);
 assertEqual(value1['h'], 3);
 assertEqual(value2['j'], 3);
 assertEqual(value3['p'], 1);
