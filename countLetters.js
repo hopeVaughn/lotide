@@ -11,7 +11,7 @@ const countLetters = function(str) {
   }
 
   const splitStr = str.replace(/[^a-zA-Z]/gi, '').split('');
-  result = {};
+  let result = {};
 
   for (const ele of splitStr) {
     if (!result[ele]) {

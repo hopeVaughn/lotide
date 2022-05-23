@@ -1,9 +1,9 @@
-const assertArrayEquals = function(array1, array2) {
-  if (!eqArrays(array1, array2)) {
-    return console.log(`🛑🛑🛑 Assertion Failed: ${array1} !== ${array2}`);
+const assertArrayEquals = function(actual, expected) {
+  if (!eqArrays(actual, expected)) {
+    return console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
   }
 
-  return console.log(`🟢🟢🟢 Asstertion Passed: ${array1} ===  ${array2}`);
+  return console.log(`🟢🟢🟢 Asstertion Passed: ${actual} ===  ${expected}`);
 };
 
 const eqArrays = function(array1, array2) {
