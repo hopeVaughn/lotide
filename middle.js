@@ -20,19 +20,15 @@ const eqArrays = function(array1, array2) {
 };
 
 const middle = function(array) {
-  // declaring an empty array to return or return values into
   const empty = [];
-  // tests for length and returns an empty array if the source array is has 2 elements or less
+
   if (array.length <= 2) {
     return empty;
   }
-  // if JavaScript makes it this far then the array must be greater then two elements
-  // bellow establishes weather the total number of elements in the source array is odd
+
   array.length % 2 !== 0
-    ? // if provided a truthy result the following logic is satisfied and returns the middle element to empty[]
-    empty.push(array[Math.floor(array.length / 2)])
-    : // else the following logic returns the two elements to empty in the middle to empty[]
-    empty.push(array[Math.floor((array.length - 1) / 2)]) +
+    ? empty.push(array[Math.floor(array.length / 2)])
+    : empty.push(array[Math.floor((array.length - 1) / 2)]) +
       empty.push(array[Math.floor(array.length / 2)]);
 
   return empty;
@@ -90,5 +86,5 @@ assertArraysEqual(value5, [5]);
 // ------------------------------------------
 // tests for first conditional <= 2 elements
 
-console.log(middle([1])); // => []
-console.log(middle([1, 2])); // => []
+// console.log(middle([1])); // => []
+// console.log(middle([1, 2])); // => []

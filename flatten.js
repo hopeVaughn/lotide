@@ -36,15 +36,15 @@ const flatten = (array) => {
 // console.log(flatten([[1], [2], [3], [4], [5]])); // => [1, 2, 3, 4, 5]
 // console.log(flatten([['I am'], 'a very', ['silly'], 'goose', ['yall']])); // => ['I am','a very','silly','goose','yall']
 // console.log(
-// flatten([
-//   ['The answer to life'],
-//   'the universe',
-//   ['and every thing in it'],
-//   'is',
-//   42,
-// ])
+//   flatten([
+//     ['The answer to life'],
+//     'the universe',
+//     ['and every thing in it'],
+//     'is',S
+//     42,
+//   ])
 // );
-// => ['the answer to life','the universe','and everyting in it','is',42]
+// ['the answer to life','the universe','and everyting in it','is',42]
 
 // --------------------------------------------------------
 

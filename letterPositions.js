@@ -20,21 +20,15 @@ const eqArrays = function(array1, array2) {
 };
 
 const letterPositions = function(strPos) {
-  // if not a string case
   if (typeof strPos !== 'string') {
     return console.log('Sorry your input is not a string');
   }
-  // declare empty object
   const result = {};
-  // i loop to get index
   for (let i = 0; i < strPos.length; i++) {
-    // don't index white space
     if (strPos[i] !== ' ') {
-      // if there is an key:value +index choose falsey and up date else create key:value with empty array
       result[strPos[i]] ? result[strPos[i]].push(i) : (result[strPos[i]] = [i]);
     }
   }
-  //return object
   return result;
 };
 

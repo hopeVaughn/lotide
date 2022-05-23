@@ -20,13 +20,7 @@ const eqArrays = function(array1, array2) {
 };
 
 const without = function(source, itemsToRemove) {
-  // declaring a new variable then filtering the source parameter array
-  const result = source.filter(
-    (e) =>
-      // only returning elements not (!falsey) included in the itemsToRemove parameter array
-      !itemsToRemove.includes(e)
-  );
-  // returning the new result array
+  const result = source.filter((e) => !itemsToRemove.includes(e));
   return result;
 };
 

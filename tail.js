@@ -15,15 +15,9 @@ const tail = function(array) {
   if (array.length === 0) {
     return [];
   }
-  // Creating a new array from the previous without mutating it.
   let newArray = array.slice(1);
   return newArray;
 };
-
-// testing to see if the original array has been mutated
-// const test = ['hey', 'there', 'guy'];
-// tail(test);
-// assertEqual(test.length, 3);
 
 assertEqual(tail([1, 2, 3, 4]), [2, 3, 4]);
 assertEqual(tail(['hello', 'how', 'are', 'you']), ['how', 'are', 'you']);

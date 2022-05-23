@@ -6,25 +6,20 @@ const assertEqual = function(actual, expected) {
 };
 
 const countLetters = function(str) {
-  // stops non string vlues from being entered
   if (typeof str !== 'string') {
     return console.log('Sorry your input is not a string');
   }
-  // declares a new variable that removes any non letter/white space/number values from source input and splits the input into individual elements
+
   const splitStr = str.replace(/[^a-zA-Z]/gi, '').split('');
-  // creates an empy object to hold the return values
   result = {};
-  // creates an iterative loop for object inputs
+
   for (const ele of splitStr) {
-    // if result object is empty place each element in the splitStr input as a key into result with the numerical value of 1
     if (!result[ele]) {
       result[ele] = 1;
-      // if result object contains keys the add +1 to each key for how many times they are present in splitStr input
     } else if (result[ele]) {
       result[ele] += 1;
     }
   }
-  // returns the result object
   return result;
 };
 
