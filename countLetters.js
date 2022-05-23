@@ -16,7 +16,7 @@ const countLetters = function(str) {
   for (const ele of splitStr) {
     if (!result[ele]) {
       result[ele] = 1;
-    } else if (result[ele]) {
+    } else {
       result[ele] += 1;
     }
   }
