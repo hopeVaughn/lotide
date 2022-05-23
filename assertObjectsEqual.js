@@ -27,9 +27,8 @@ const eqObjects = function(object1, object2) {
   const result =
     typeof object1 === 'object' && Object.keys(object1).length > 0
       ? Object.keys(object1).length === Object.keys(object2).length &&
-        Object.keys(object1).every((p) => eqArrays(object1[p], object2[p]))
+        Object.keys(object1).every((e) => eqArrays(object1[e], object2[e]))
       : object1 === object2;
-  console.log(result);
   return result;
 };
 
