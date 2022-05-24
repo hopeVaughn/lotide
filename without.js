@@ -1,4 +1,4 @@
-const assertArraysEqual = function(array1, array2) {
+const assertArraysEqual = function (array1, array2) {
   if (!eqArrays(array1, array2)) {
     return console.log(`🛑🛑🛑 Assertion Failed: ${array1} !== ${array2}`);
   }
@@ -6,7 +6,7 @@ const assertArraysEqual = function(array1, array2) {
   return console.log(`🟢🟢🟢 Asstertion Passed: ${array1} === ${array2}`);
 };
 
-const eqArrays = function(array1, array2) {
+const eqArrays = function (array1, array2) {
   if (array1.length !== array2.length) {
     return false;
   }
@@ -19,14 +19,12 @@ const eqArrays = function(array1, array2) {
   return true;
 };
 
-const without = function(source, itemsToRemove) {
-  // I was advised that the following methodology was too complex for this this stage in the program and to use simpler methodology to acheive the same result.
-
+const without = function (source, itemsToRemove) {
+  // Bellow is a more complex syntax to acheive the same result
   // const result = source.filter((e) => !itemsToRemove.includes(e));
   // return result;
 
   //simpler syntax
-
   const result = [];
   for (let i = 0; i < source.length; i++) {
     if (!itemsToRemove.includes(source[i]) && !result.includes(source[i])) {

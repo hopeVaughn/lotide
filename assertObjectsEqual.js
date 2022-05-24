@@ -11,7 +11,7 @@ const assertObjectsEqual = function (actual, expected) {
 };
 
 const eqObjects = function (object1, object2) {
-  // I was advised that the following methodology was too complex for this this stage in the program and to use simpler methodology to acheive the same result.
+  // Below is a more complex syntax that will acheive the same result
   //   const result =
   //     typeof object1 === 'object' && Object.keys(object1).length > 0
   //       ? Object.keys(object1).length === Object.keys(object2).length &&

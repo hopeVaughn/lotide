@@ -1,4 +1,4 @@
-const assertArraysEqual = function(array1, array2) {
+const assertArraysEqual = function (array1, array2) {
   if (!eqArrays(array1, array2)) {
     return console.log(`🛑🛑🛑 Assertion Failed: ${array1} !== ${array2}`);
   }
@@ -6,7 +6,7 @@ const assertArraysEqual = function(array1, array2) {
   return console.log(`🟢🟢🟢 Asstertion Passed: ${array1} ===  ${array2}`);
 };
 
-const eqArrays = function(array1, array2) {
+const eqArrays = function (array1, array2) {
   if (array1.length !== array2.length) {
     return false;
   }
@@ -20,8 +20,7 @@ const eqArrays = function(array1, array2) {
 };
 
 const flatten = (array) => {
-  // I was advised that the following methodology was too complex for this this stage in the program and to use simpler methodology to acheive the same result.
-
+  //Below is a more complex syntax to acheive the same result
   // return array.reduce((flat, toBeFlattened) => {
   //   if (Array.isArray(toBeFlattened)) {
   //     return flat.concat(...flatten(toBeFlattened));
@@ -29,8 +28,7 @@ const flatten = (array) => {
   //   return flat.concat(toBeFlattened);
   // }, []);
 
-  // Simpler syntax with concat
-
+  // Below is a simpler syntax that uses concat
   // const result = [];
   // while (array.length) {
   //   let value = array.shift();
@@ -43,7 +41,8 @@ const flatten = (array) => {
   // }
   // return result;
 
-  // Simpler yet without concat
+  // Below is a simpler syntax that does not use concat
+  // Simpler syntax without the use of concat
 
   const result = [];
   for (let i = 0; i < array.length; ++i) {
