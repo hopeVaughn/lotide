@@ -20,17 +20,66 @@ const eqArrays = function(array1, array2) {
 };
 
 const flatten = (array) => {
-  return array.reduce((flat, toBeFlattened) => {
-    if (Array.isArray(toBeFlattened)) {
-      return flat.concat(...flatten(toBeFlattened));
+  // I was advised that the following methodology was too complex for this this stage in the program and to use simpler methodology to acheive the same result.
+
+  // return array.reduce((flat, toBeFlattened) => {
+  //   if (Array.isArray(toBeFlattened)) {
+  //     return flat.concat(...flatten(toBeFlattened));
+  //   }
+  //   return flat.concat(toBeFlattened);
+  // }, []);
+
+  // Simpler syntax with concat
+
+  // const result = [];
+  // while (array.length) {
+  //   let value = array.shift();
+  //   if (Array.isArray(value)) {
+  //     // this line preserve the order
+  //     array = value.concat(array);
+  //   } else {
+  //     result.push(value);
+  //   }
+  // }
+  // return result;
+
+  // Simpler yet without concat
+
+  const result = [];
+  for (let i = 0; i < array.length; ++i) {
+    let value = array[i];
+    if (Array.isArray(value)) {
+      for (let j = 0; j < value.length; ++j) {
+        result.push(value[j]);
+      }
+    } else {
+      result.push(value);
     }
-    return flat.concat(toBeFlattened);
-  }, []);
+  }
+  return result;
 };
 
-// -------------------------------------------------------------------------
+// --------------------------------------------------------------------------
+// Test cases for flatten
+console.log(flatten([1, 2, [3, 4], 5, [6]]));
+console.log(flatten(['a', 'b', [3, 4]]));
+console.log(flatten([['a'], 'b', [3, 4], ['c', 'd']]));
 
-// testing flatten()
+// -------------------------------------------------------------------------
+// Test case with assertEqualsArray
+
+assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]);
+assertArraysEqual(flatten([['a'], 'b', [3, 4], ['c', 'd']]), [
+  'a',
+  'b',
+  3,
+  4,
+  'c',
+  'd',
+]);
+assertArraysEqual(flatten(['a', 'b', [3, 4]], ['a', 'b', 3, 4]));
+// -------------------------------------------------------------------------
+// test cases for flatten() using reduce()
 
 // console.log(flatten([1, 2, [3, 4], 5, [6]])); // => [1, 2, 3, 4, 5, 6]
 // console.log(flatten([[1], [2], [3], [4], [5]])); // => [1, 2, 3, 4, 5]
@@ -48,25 +97,25 @@ const flatten = (array) => {
 
 // --------------------------------------------------------
 
-// test cases using assertArraysEqual()
+// test cases using assertArraysEqual() with reduce()
 
-const value1 = flatten([1, 2, [3, 4], 5, [6]]);
-assertArraysEqual(value1, [1, 2, 3, 4, 5, 6]);
-const value2 = flatten([[1], [2], [3], [4], [5]]);
-assertArraysEqual(value2, [1, 2, 3, 4, 5, 6]);
-const value3 = flatten([['I am'], 'a very', ['silly'], 'goose', ['yall']]);
-assertArraysEqual(value3, ['I am', 'a very', 'silly', 'goose', 'yall']);
-const value4 = flatten([
-  ['The answer to life'],
-  'the universe',
-  ['and every thing in it'],
-  'is',
-  42,
-]);
-assertArraysEqual(value4, [
-  'the answer to life',
-  'the universe',
-  'and everyting in it',
-  'is',
-  42,
-]);
+// const value1 = flatten([1, 2, [3, 4], 5, [6]]);
+// assertArraysEqual(value1, [1, 2, 3, 4, 5, 6]);
+// const value2 = flatten([[1], [2], [3], [4], [5]]);
+// assertArraysEqual(value2, [1, 2, 3, 4, 5, 6]);
+// const value3 = flatten([['I am'], 'a very', ['silly'], 'goose', ['yall']]);
+// assertArraysEqual(value3, ['I am', 'a very', 'silly', 'goose', 'yall']);
+// const value4 = flatten([
+//   ['The answer to life'],
+//   'the universe',
+//   ['and every thing in it'],
+//   'is',
+//   42,
+// ]);
+// assertArraysEqual(value4, [
+//   'the answer to life',
+//   'the universe',
+//   'and everyting in it',
+//   'is',
+//   42,
+// ]);

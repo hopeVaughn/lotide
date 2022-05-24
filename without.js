@@ -20,14 +20,27 @@ const eqArrays = function(array1, array2) {
 };
 
 const without = function(source, itemsToRemove) {
-  const result = source.filter((e) => !itemsToRemove.includes(e));
+  // I was advised that the following methodology was too complex for this this stage in the program and to use simpler methodology to acheive the same result.
+
+  // const result = source.filter((e) => !itemsToRemove.includes(e));
+  // return result;
+
+  //simpler syntax
+
+  const result = [];
+  for (let i = 0; i < source.length; i++) {
+    if (!itemsToRemove.includes(source[i]) && !result.includes(source[i])) {
+      result.push(source[i]);
+    }
+  }
   return result;
 };
 
 // Tests to see if source param in without() has been mutated
-const test = [1, 2, 3, 4];
-const value = without(test, [1, 3]);
-assertArraysEqual(value, [2, 4]);
+// const test = [1, 2, 3, 4];
+// const value = without(test, [1, 3]);
+// console.log(test);
+// assertArraysEqual(value, [2, 4]);
 
 // Case tests for assertArraysEqual
 

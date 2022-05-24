@@ -86,5 +86,6 @@ assertArraysEqual(value5, [5]);
 // ------------------------------------------
 // tests for first conditional <= 2 elements
 
+// console.log(middle([])); // => []
 // console.log(middle([1])); // => []
 // console.log(middle([1, 2])); // => []
