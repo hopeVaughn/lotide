@@ -1,17 +1,17 @@
-const assertEqual = function (actual, expected) {
+const assertEqual = function(actual, expected) {
   if (actual !== expected) {
     return console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
   }
   return console.log(`🟢🟢🟢 Asstertion Passed: ${actual} === ${expected}`);
 };
 
-const findKeyByValue = function (object, value) {
+const findKeyByValue = function(object, value) {
   // Below is a more complex syntax to acheive the same result
   // return Object.keys(object).find((key) => object[key] === value);
 
   // simpler syntax
   let result = '';
-  for (key in object) {
+  for (let key in object) {
     if (value === object[key]) {
       result = key;
     }

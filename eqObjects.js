@@ -5,6 +5,7 @@ const assertEqual = function(actual, expected) {
   return console.log(`🟢🟢🟢 Asstertion Passed: ${actual} === ${expected}`);
 };
 
+// The code bellow would be added to the more complex syntax to help compare objects
 const eqArrays = function(array1, array2) {
   if (array1.length !== array2.length) {
     return false;
@@ -19,15 +20,26 @@ const eqArrays = function(array1, array2) {
 };
 
 const eqObjects = function(object1, object2) {
-  const result =
-    typeof object1 === 'object' && Object.keys(object1).length > 0
-      ? Object.keys(object1).length === Object.keys(object2).length &&
-        Object.keys(object1).every((e) => eqArrays(object1[e], object2[e]))
-      : object1 === object2;
-  return result;
-};
+  let obj1 = Object.keys(object1);
+  let obj2 = Object.keys(object2);
 
-// As a note I believe instead of using eqArrays inside the ternary operation I could have passed in eqObjects recursivley to accomplish the same thing.
+  if (obj1.length !== obj2.length) {
+    return false;
+  } else {
+    for (let key of obj1) {
+      if (obj1[key] !== obj2[key]) {
+        return false;
+      } else {
+        if (Array.isArray(object1[key]) && Array.isArray(object2[key])) {
+          return eqArrays(object1[key], object2[key]);
+        } else if (object1[key] !== object2[key]) {
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+};
 
 // const test1 = { first: 'first', second: 'second' };
 // const test2 = { second: 'second', first: 'first' };
@@ -36,9 +48,10 @@ const eqObjects = function(object1, object2) {
 // const test3 = { first: 'first', second: 'second', third: 'third' };
 // console.log(eqObjects(test1, test3)); // false
 
-const cd = { c: '1', d: ['2', 3] };
-const dc = { d: ['2', 3], c: '1' };
-assertEqual(eqObjects(cd, dc), true); // true
-
-const cd2 = { c: '1', d: ['2', 3, 4] };
-assertEqual(eqObjects(cd, cd2), false); // false
+const ab = { a: '1', b: '2' };
+const ba = { b: '2', a: '1' };
+assertEqual(eqObjects(ab, ba), true); // => true
+// console.log(eqObjects(ab, ba)); // true
+const abc = { a: '1', b: '2', c: '3' };
+// console.log(eqObjects(ab, abc)); // => false
+assertEqual(eqObjects(ab, abc), false);
