@@ -23,7 +23,7 @@ const words = ['ground', 'control', 'to', 'major', 'tom'];
 const numbers = [3, 4, 5, 6, 7, 8, 9];
 const input = ['a', 'b', 'c', 'd', 'e'];
 
-const map = (array, callback) => {
+const map = function(array, callback) {
   const results = [];
   for (let item of array) {
     results.push(callback(item));
