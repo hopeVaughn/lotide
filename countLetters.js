@@ -9,7 +9,7 @@ const countLetters = function(str) {
   if (typeof str !== 'string') {
     return console.log('Sorry your input is not a string');
   }
-  // The line bellow is an addition to an edge case that would eliminate white space and any non-letter characters using regex.
+  // The line bellow to be added for edge case to allow the eliminatation of white space and any non-letter characters using regex.
   // const splitStr = str.replace(/[^a-zA-Z]/gi, '').split('');
   let result = {};
 

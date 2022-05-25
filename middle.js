@@ -25,7 +25,7 @@ const middle = function(array) {
   if (array.length <= 2) {
     return empty;
   }
-
+  // used ternary for linear reading and speed
   array.length % 2 !== 0
     ? empty.push(array[Math.floor(array.length / 2)])
     : empty.push(array[Math.floor((array.length - 1) / 2)]) +
