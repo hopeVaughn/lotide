@@ -19,30 +19,7 @@ const eqArrays = function(array1, array2) {
   return true;
 };
 
-const flatten = (array) => {
-  //Below is a more complex syntax to acheive the same result
-  // return array.reduce((flat, toBeFlattened) => {
-  //   if (Array.isArray(toBeFlattened)) {
-  //     return flat.concat(...flatten(toBeFlattened));
-  //   }
-  //   return flat.concat(toBeFlattened);
-  // }, []);
-
-  // Below is a simpler syntax that uses concat
-  // const result = [];
-  // while (array.length) {
-  //   let value = array.shift();
-  //   if (Array.isArray(value)) {
-  //     // this line preserve the order
-  //     array = value.concat(array);
-  //   } else {
-  //     result.push(value);
-  //   }
-  // }
-  // return result;
-
-  // Below is a simpler syntax that does not use concat
-  // Simpler syntax without the use of concat
+const flatten = function(array) {
 
   const result = [];
   for (let i = 0; i < array.length; ++i) {
