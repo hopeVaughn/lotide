@@ -1,8 +1,8 @@
-const tail = function(array) {
-  if (array === undefined) {
-    return;
-  }
+const tail = function (array) {
   if (array.length === 0) {
+    return [];
+  }
+  if (array.length === 1) {
     return [];
   }
 
