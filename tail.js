@@ -1,4 +1,4 @@
-const tail = function (array) {
+const tail = function(array) {
   if (array.length === 0) {
     return [];
   }
