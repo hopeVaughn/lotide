@@ -1,4 +1,4 @@
-const findKeys = function(obj, cb) {
+const findKey = function(obj, cb) {
   let empty = '';
   for (const ele in obj) {
     if (cb(obj[ele])) {
@@ -9,4 +9,4 @@ const findKeys = function(obj, cb) {
   return undefined;
 };
 
-module.exports = findKeys;
+module.exports = findKey;
